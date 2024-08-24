@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q-1,2,3,4,5,6</title>
+</head>
+<body>
+    <h3>Q1. Create an arrow function called square that takes a number as an argument and returns its square. Use
+        the arrow function to calculate the square of a given number and display the result.</h3>
+
+        <h4 style="color: green;">
+            code:- <br>
+            function square(num) {
+                <br>
+                const square = (num) => num * num;
+                <br>
+                return num*num;   }
+                <br>
+          
+            const number = 5;
+            <br>
+            const result = square(number);
+            <br>
+            console.log("The square of", number, "is", result);
+            
+        </h4>
+
+        <h4 style="color: blue;">
+            Explanation:- 
+            <li>
+                (num) is the parameter. </li>
+                <li>
+                => indicates that this is an arrow function. </li>
+             <li>   num * num is the expression that calculates the square of the input num.</li>
+        </h4>
+        <br>
+        <h3>Q2. Create a JavaScript function called generateGreeting that takes a name as an argument and returns a
+            personalized greeting message. Use this function to greet three different people.</h3>
+
+            <h4 style="color: green;">
+                code:- 
+                <br>
+                function generateGreeting(name){
+                    <br>
+                    return `${name}! welcome to pw skills.`;
+                }
+                <br>
+                const greeting1= generateGreeting("Hello");
+                <br>
+                const greeting2=generateGreeting("prem");
+                <br>
+                const greeting3=generateGreeting("kumar");
+                <br>
+                
+                console.log(greeting1);
+                <br>
+                console.log(greeting2);
+                <br>
+                console.log(greeting3);
+            </h4>
+        <h4 style="color: blue;">
+Explanation:- 
+<li>Function generateGreeting: </li>
+   <li> Takes 'name' as an argument.
+    <li>
+    Uses a template literal (backticks) to create a personalized greeting message that includes the provided name.</li>
+        </h4>
+
+        <h2>Q3. Create an IIFE (Immediately Invoked Function Expression) that calculates the square of a number and
+            immediately displays the result.</h2>
+
+            <h4 style="color: green;">
+                code:- 
+                <br>
+                (function(num) {
+                    <br>
+                    const result = num * num;
+                    <br>
+                    console.log(`The square of ${num} is ${result}`);
+                    <br>
+                })(10);
+            </h4>
+            <h4 style="color: blue;">
+                Explanation:- 
+                <br>
+                IIFE Syntax:
+
+<li>The function is defined and immediately invoked by wrapping it in parentheses (function(){...}) and following it with another set of parentheses () containing the argument. </li>
+<li>num Parameter:-
+
+The IIFE takes a number num as an argument. </li>
+<li>Calculation:-
+
+It calculates the square of num using num * num. </li>
+<li> Immediate Execution:-
+
+The function is immediately executed with the argument 10 passed in. </li>
+            </h4>
+
+            <h2>Q4. Write a JavaScript function called calculateTax that takes an income as an argument and returns the
+                amount of tax to be paid. Use a closure to handle different tax rates based on income ranges. Test the
+                function with various incomes.</h2>
+
+                <h4 style="color: green;">
+               code:- <br>
+               function calculateTax(income) {
+                <br>
+                function getTaxRate(income) {
+                    <br>
+                    if (income <= 20000) {
+                        
+                        return 0.05; 
+
+                    }  <br>
+                   if (income <= 50000) {
+                        return 0.1;  
+                    }
+                    <br>
+                     else if (income <= 100000) {
+                        return 0.2;  
+                    }
+                    <br>
+                     else {
+                        return 0.3;  
+                    }
+
+                }
+                <br>
+                const taxRate = getTaxRate(income);
+                <br>
+                return income * taxRate;
+            }
+            <br>
+            const income1 = 15000;
+            <br>
+            const income2 = 40000;
+            <br>
+            const income3 = 75000;
+            <br>
+            const income4 = 120000;
+            <br>
+            
+            console.log(`Tax for income $${income1} is $${calculateTax(income1)}`);
+            <br>
+            console.log(`Tax for income $${income2} is $${calculateTax(income2)}`);
+            <br>
+            console.log(`Tax for income $${income3} is $${calculateTax(income3)}`);
+            <br>
+            console.log(`Tax for income $${income4} is $${calculateTax(income4)}`);
+
+                </h4>
+                <h4 style="color: blue;">
+
+                    Explanation:- 
+                    <br>
+                    1.calculateTax Function:- <br>
+
+<li> Takes income as an argument. </li>
+<li>Uses an inner function (a closure) called getTaxRate to determine the tax rate based on the income range. </li>
+2.Closure getTaxRate:-
+<br>
+
+<li>Income <= 20,000: 5% tax rate. </li>
+<li>Income between 20,001 and 50,000: 10% tax rate. </li>
+<li>Income between 50,001 and 100,000: 20% tax rate. </li>
+<li>Income above 100,000: 30% tax rate. </li>
+3. Return Value:-
+<br>
+
+<li>The function returns the amount of tax to be paid, calculated as income * taxRate. </li>
+                </h4>
+
+<h2>Q5. Write a JavaScript function called factorial that calculates the factorial of a non-negative integer using
+    recursion. Test the function with different inputs.</h2>
+    <h4 style="color: green;">
+        code:- 
+        <br>
+        function factorial(n) {
+            <br>
+            if (n === 0 || n === 1) {
+                <br>
+                return 1;
+            }
+            <br>
+            return n * factorial(n - 1);
+        }
+        <br>
+        console.log(`Factorial of 0 is ${factorial(0)}`);  
+        <br>
+        console.log(`Factorial of 1 is ${factorial(1)}`);  
+        <br>
+        console.log(`Factorial of 5 is ${factorial(5)}`);  
+        <br>
+        console.log(`Factorial of 7 is ${factorial(7)}`);  
+        <br>
+        console.log(`Factorial of 10 is ${factorial(10)}`); 
+        
+    </h4>
+
+    <h4 style="color: blue;">
+        Explanation:- 
+        <br>
+        1. Base Case:-
+
+ <li>The base case checks if n is 0 or 1. If it is, the function returns 1 because the factorial of 0 and 1 is 1. </li>
+2.Recursive Case:-
+
+<li>If n is greater than 1, the function returns n * factorial(n - 1). This means the function calls itself with a decremented value of n, gradually reducing it until it reaches the base case. </li>
+    </h4>
+
+    <h2>Q6. Write a JavaScript function called curry that takes a function as an argument and returns a curried
+        version of that function. The curried function should accept arguments one at a time and return a new
+        function until all arguments are provided. Then, it should execute the original function with all arguments.
+        Test the curry function with a function that adds two numbers.</h2>
+
+        <h4 style="color: green;">
+        code:- 
+        <br>
+        function curry(func) {
+            <br>
+            return function curried(...args) {
+                <br>
+                if (args.length >= func.length) {
+                    <br>
+                    return func.apply(this, args);
+                } 
+                <br> else {
+                    return function(...nextArgs) {
+                        <br>
+                        return curried.apply(this, args.concat(nextArgs));
+                    };
+                    <br>
+                }
+            };
+
+        <br>
+        }
+        
+        <br>
+    Test:- 
+        <br>
+        function add(a, b) {
+            <br>
+            return a + b;
+        }
+        <br>
+        const curriedAdd = curry(add);
+        <br>
+        console.log(curriedAdd(5)(3)); 
+        <br>
+        console.log(curriedAdd(10)(20)); 
+        
+        </h4>
+
+        <h4 style="color: blue;">
+Explanation:- 
+<br>
+1. curry Function:-
+<br>
+
+ <li> Input: Takes a function func as an argument. </li>
+ <li> curried Function:-  </li>
+<li>If the number of arguments provided (args.length) is equal to or greater than the number of parameters expected by the original function (func.length), it immediately calls the original function with all the arguments.</li>
+<li>If not all arguments are provided, it returns a new function that accepts the remaining arguments. This process continues until all required arguments are collected. </li>
+2. add Function:
+<li>
+A simple function that takes two arguments, a and b, and returns their sum. </li>
+3. curriedAdd:
+<li>
+The curried version of the add function. It can be called with arguments one at a time. </li>
+        </h4>
+
+
+  <script src="Question6.js"></script>      
+<script src="Question5.js"></script>
+<script src="Question4.js"></script>
+<script src="Question3.js"></script>
+            <script src="Question2.js"></script>
+    <script src="Question1.js"></script>
+</body>
+</html>
